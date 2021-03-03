@@ -54,31 +54,32 @@ else:
 print(f'El valor de la compra es de: {vc}')
 print(f'El valor de la compra con descuento es de: ${f}')
 
-
 # Una empresa de colchones ofrece descuento según la siguiente tabla
 # Numero de colchones comprados % Descuento
 # De 0 a menos de 3              0%
 # De 3 hasta menos de 6          20%
 # De 6 hasta menos de 8          25%
 # De 8 en adelante               30%
+# Determine cuanto pagará una persona que compre colchones
 
 cc = int(input('Digite el número de colchones comprados: '))
+vc = 50000
 d1 = 0
-d2 = 20
-d3 = 25
-d4 = 30
-if 1 >= cc < 3:
-    p = d1
+d2 = 0.80
+d3 = 0.75
+d4 = 0.70
+if cc >= 1 and cc < 3:
+    p = vc
 else:
-    if 3 >= cc < 6:
-        p = d2
+    if cc >= 3 and cc < 6:
+        p = (vc * cc) * d2
     else:
         if 6 >= cc < 8:
-            p = d3
+            p = (vc * cc) * d3
         else:
-            p = d4
-print(f'El descuento aplicado por la compra de {cc} colchones')
-print(f'es de {p}%')
+            p = (vc * cc) * d4
+print(f'El valor a pagar por la compra de {cc} colchones')
+print(f'es de {p}')
 
 # Una universidad desea seleccionar una muestra de estudiantes para
 # realizar una encuesta. Si el número de estudiantes es menor que 20 se
